@@ -16,10 +16,10 @@ function App() {
     setStatus('Sedang mengunggah dan memproses...');
 
     try {
-      const response = await fetch('http://localhost:3000/api/upload', {
+      const response = await fetch('https://swifter-capillary-vacant.ngrok-free.dev/api/upload', {
         method: 'POST',
         body: formData,
-      });
+    });
       const data = await response.json();
       setStatus(data.pesan);
     } catch (error) {
