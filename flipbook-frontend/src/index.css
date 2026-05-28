@@ -1,3 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Class untuk font */
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Animasi latar belakang */
+@keyframes scroll-bg {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll-bg 60s linear infinite;
+}
