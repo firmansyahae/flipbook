@@ -119,6 +119,8 @@ app.post('/api/upload', upload.single('fileBuku'), async (req, res) => {
     console.log('Semua gambar berhasil diunggah ke Storage!');
     console.log('Menyimpan data buku ke Database...');
 
+    const kategoriBuku = req.body.kategori || 'umum'; // Menangkap kategori dari frontend
+
     // Simpan judul dan urutan gambar ke tabel 'buku' di Database Supabase
     const { data: dbData, error: dbError } = await supabase
         .from('data FlipBook')
@@ -126,6 +128,7 @@ app.post('/api/upload', upload.single('fileBuku'), async (req, res) => {
             {
                 judul: `Jurnal Dummy ${namaBukuSingkat}`,
                 penulis: 'Admin Dummy',
+                kategori: kategoriBuku, // <-- INI YANG BARU
                 halaman: daftarUrlGambar
             }
         ]);
