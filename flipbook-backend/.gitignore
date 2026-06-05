@@ -1,0 +1,8 @@
+# Mengabaikan folder sisa pemotongan PDF
+uploads/
+
+# Mengabaikan folder library/modul yang berat (Wajib ada)
+node_modules/
+
+# Mengabaikan file kunci rahasia lingkungan (Wajib ada jika pakai .env)
+.env
